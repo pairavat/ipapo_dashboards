@@ -15,10 +15,11 @@ import Badges from "./pages/UiElements/Badges";
 import Buttons from "./pages/UiElements/Buttons";
 import Images from "./pages/UiElements/Images";
 import Videos from "./pages/UiElements/Videos";
-// import UserProfiles from "./pages/UserProfiles";
 import UserListPage from "./pages/User/UserListPage";
 import UserListProfiles from "./pages/UserProfile/User_List_Profiles";
-// import UserDetails from "./pages/"
+import UserProfiles from "./pages/UserProfiles";
+import BarChart from "./pages/Charts/BarChart";
+import LineChart from "./pages/Charts/LineChart";
 
 export default function App() {
   return (
@@ -50,6 +51,10 @@ export default function App() {
             <Route path="/buttons" element={<Buttons />} />
             <Route path="/images" element={<Images />} />
             <Route path="/videos" element={<Videos />} />
+
+            {/* Charts */}
+            <Route path="/line-chart" element={<LineChart />} />
+            <Route path="/bar-chart" element={<BarChart />} />
           </Route>
 
           {/* Auth Layout */}
