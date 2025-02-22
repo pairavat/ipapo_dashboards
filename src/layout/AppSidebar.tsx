@@ -48,7 +48,6 @@ const navItems: NavItem[] = [
     path: "/calendar",
     subItems: [
       { name: "Dashbord", path: "/Inventory-dashbord", pro: false },
-      { name: "Add New Assest", path: "/add_new_assest", pro: false },
       { name: "Inventory List", path: "/inventory_list", pro: false },
       { name: "Assest Maintenance", path: "/assest_maintenance", pro: false },
     ],
@@ -58,7 +57,7 @@ const navItems: NavItem[] = [
     name: "Operations",
     path: "/profile",
     subItems: [
-      { name: "Dashbord", path: "/Inventory-dashbord", pro: false },
+      { name: "Dashbord", path: "/Operations-dashbord", pro: false },
       { name: "Project Management", path: "/project_management", pro: false },
       { name: "Sales Overview", path: "/sales_overview", pro: false },
       { name: "Incidence Management", path: "/incidence_management", pro: false },

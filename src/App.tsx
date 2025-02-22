@@ -17,6 +17,10 @@ import Images from "./pages/UiElements/Images";
 import Videos from "./pages/UiElements/Videos";
 import UserProfiles from "./pages/UserProfiles";
 import People_Dashboard from "./pages/Dashboard/People_Dashboard/People_Dashboard";
+import InventoryList from  './components/RecentOrders/InventoryList'
+import AssetMaintenance from "./pages/AssestMaintenance/AssestMaintenance";
+import Inventory_Dashboard from "./pages/Dashboard/Inventory_Dashboard/Inventory_Dashboard"
+import Operations_Dashboard from "./pages/Dashboard/Operations_Dashboard/Operations_Dashboard"
 export default function App() {
   return (
     <>
@@ -26,6 +30,10 @@ export default function App() {
           <Route element={<AppLayout />}>
             <Route index path="/" element={<Ecommerce />} />
             <Route index path="/people-dashbord" element={<People_Dashboard />} />
+            <Route index path="/Inventory-dashbord" element={<Inventory_Dashboard />} />
+            <Route index path="/Operations-dashbord" element={<Operations_Dashboard />} />
+
+
 
             {/* Others Page */}
             <Route path="/profile" element={<UserProfiles />} />
@@ -45,6 +53,11 @@ export default function App() {
             <Route path="/buttons" element={<Buttons />} />
             <Route path="/images" element={<Images />} />
             <Route path="/videos" element={<Videos />} />
+
+                {/* inventory list */}
+           <Route  path="/inventory_list" element={<InventoryList />} />
+           <Route  path="/assest_maintenance" element={<AssetMaintenance />} />
+
           </Route>
 
           {/* Auth Layout */}
@@ -55,6 +68,11 @@ export default function App() {
 
           {/* Fallback Route */}
           <Route path="*" element={<NotFound />} />
+
+
+       
+
+
         </Routes>
       </Router>
     </>

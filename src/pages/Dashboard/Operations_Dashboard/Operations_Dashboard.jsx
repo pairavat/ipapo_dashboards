@@ -7,11 +7,8 @@ import LeaveRequestTable from '../../../components/LeaveRequestTable/LeaveReques
 import LocationSection from '../../../components/LocationSection/LocationSection';
 import ToursTaken from '../../../components/ToursTaken/ToursTaken';
 import ActiveSites from '../../../components/ActiveSites/ActiveSites';
-import IndiaMap from '../../../components/indianOfficeMap/IndiaMap';
-
-
-
-const People_Dashboard = () => {
+import IndiaMap from '../../../components/indianOfficeMap/IndiaMap'
+const Operations_Dashboard = () => {
   return (
     <div className="bg-[#E8E8E8] min-h-screen">
  
@@ -39,4 +36,4 @@ const People_Dashboard = () => {
   );
 };
 
-export default People_Dashboard;
+export default Operations_Dashboard;
