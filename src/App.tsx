@@ -15,7 +15,10 @@ import Badges from "./pages/UiElements/Badges";
 import Buttons from "./pages/UiElements/Buttons";
 import Images from "./pages/UiElements/Images";
 import Videos from "./pages/UiElements/Videos";
-import UserProfiles from "./pages/UserProfiles";
+// import UserProfiles from "./pages/UserProfiles";
+import UserListPage from "./pages/User/UserListPage";
+import UserListProfiles from "./pages/UserProfile/User_List_Profiles";
+// import UserDetails from "./pages/"
 
 export default function App() {
   return (
@@ -26,7 +29,7 @@ export default function App() {
           <Route element={<AppLayout />}>
             <Route index path="/" element={<Ecommerce />} />
             {/* Others Page */}
-            <Route path="/profile" element={<UserProfiles />} />
+            <Route path="/profile/:id" element={<UserListProfiles />} />
             <Route path="/calendar" element={<Calendar />} />
             <Route path="/blank" element={<Blank />} />
 
@@ -35,6 +38,10 @@ export default function App() {
 
             {/* Tables */}
             <Route path="/basic-tables" element={<BasicTables />} />
+
+            {/* Users */}
+            <Route path="/user-list" element={<UserListPage />} />
+            {/* <Route path="/user-details" element={<UserDetails />} /> */}
 
             {/* Ui Elements */}
             <Route path="/alerts" element={<Alerts />} />
