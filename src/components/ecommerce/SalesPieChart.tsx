@@ -5,66 +5,130 @@ import { MoreDotIcon } from "../../icons";
 import { Dropdown } from "../ui/dropdown/Dropdown";
 import { DropdownItem } from "../ui/dropdown/DropdownItem";
 
-export default function MonthlyTarget() {
-  const series = [75.55];
+export default function SalesPieChart() {
+  const series = [55, 30, 15];
   const options: ApexOptions = {
-    colors: ["#465FFF"],
+    colors: ["#465FFF", "#e6b917", "#23c446"],
     chart: {
       fontFamily: "Outfit, sans-serif",
-      type: "radialBar",
-      height: 375,
+      type: "donut",
+      height: 200,
       sparkline: {
         enabled: true,
       },
-      animations:{
+      animations: {
         enabled: true,
         animateGradually: {
           enabled: true,
-          delay: 250
+          delay: 250,
         },
         dynamicAnimation: {
           enabled: true,
-          speed: 350
+          speed: 350,
         },
         // speed: 15
-      }
+      },
     },
     plotOptions: {
-      radialBar: {
-        startAngle: -85,
-        endAngle: 85,
-        hollow: {
-          size: "80%",
-        },
-        track: {
-          background: "#E4E7EC",
-          strokeWidth: "100%",
-          margin: 5, // margin is in pixels
-        },
-        dataLabels: {
-          name: {
-            show: false,
-          },
-          value: {
-            fontSize: "36px",
-            fontWeight: "600",
-            offsetY: -40,
-            color: "#1D2939",
-            formatter: function (val) {
-              return val + "%";
+      //   radialBar: {
+      //     startAngle: -85,
+      //     endAngle: 85,
+      //     hollow: {
+      //       size: "80%",
+      //     },
+      //     // track: {
+      //     //   background: "#E4E7EC",
+      //     //   strokeWidth: "100%",
+      //     //   margin: 5, // margin is in pixels
+      //     // },
+      //     dataLabels: {
+      //       name: {
+      //         show: true  ,
+      //       },
+      //       value: {
+      //         fontSize: "36px",
+      //         fontWeight: "600",
+      //         offsetY: -40,
+      //         color: "#1D2939",
+      //         formatter: function (val) {
+      //           return val + "%";
+      //         },
+      //       },
+      //     },
+      //   },
+      pie: {
+        startAngle: 0,
+        endAngle: 360,
+        expandOnClick: true,
+        offsetX: 0,
+        offsetY: 0,
+        customScale: 1,
+        // dataLabels: {
+        //   offset: 0,
+        //   minAngleToShowLabel: 10,
+        // },
+        donut: {
+          size: "75%",
+          background: "transparent",
+          labels: {
+            show: true,
+            name: {
+              show: true,
+              fontSize: "22px",
+              fontFamily: "Helvetica, Arial, sans-serif",
+              fontWeight: 600,
+              color: "#465FFF",
+              offsetY: -10,
+              formatter: function (val) {
+                return val;
+              },
+            },
+            value: {
+              show: true,
+              fontSize: "16px",
+              fontFamily: "Helvetica, Arial, sans-serif",
+              fontWeight: 400,
+              color: "#e6b917",
+              offsetY: 16,
+              formatter: function (val) {
+                return val;
+              },
+            },
+            total: {
+              show: true,
+              showAlways: false,
+              label: "Total",
+              fontSize: "22px",
+              fontFamily: "Helvetica, Arial, sans-serif",
+              fontWeight: 600,
+              color: "#373d3f",
+              formatter: function (w) {
+                return w.globals.seriesTotals.reduce((a: any, b: any) => {
+                  return a + b;
+                }, 0);
+              },
             },
           },
         },
       },
     },
+
+    legend: {
+      show: true,
+      position: "top",
+    },
+    tooltip: {
+      fillSeriesColor: true,
+      enabled: false,
+    },
     fill: {
-      type: "solid",
-      colors: ["#465FFF"],
+      // type: "solid",
+      colors: ["#465FFF", "#e6b917", "#23c446"],
     },
     stroke: {
       lineCap: "round",
     },
-    labels: ["Progress"],
+    labels: ["Ongoing", "Delayed", "Completed"],
   };
   const [isOpen, setIsOpen] = useState(false);
 
@@ -81,11 +145,11 @@ export default function MonthlyTarget() {
         <div className="flex justify-between">
           <div>
             <h3 className="text-lg font-semibold text-gray-800 dark:text-white/90">
-              Monthly Sales Target
+              Project Overview
             </h3>
-            <p className="mt-1 text-gray-500 text-theme-sm dark:text-gray-400">
+            {/* <p className="mt-1 text-gray-500 text-theme-sm dark:text-gray-400">
               Target you’ve set for each month
-            </p>
+            </p> */}
           </div>
           <div className="relative inline-block">
             <button onClick={toggleDropdown}>
@@ -112,18 +176,18 @@ export default function MonthlyTarget() {
           </div>
         </div>
         <div className="relative ">
-          <div className="max-h-[375px]">
+          <div className="max-h-[200px]">
             <Chart
               options={options}
               series={series}
-              type="radialBar"
-              height={375}
+              type="donut"
+              height={200}
             />
           </div>
 
-          <span className="absolute left-1/2 top-full -translate-x-1/2 -translate-y-[95%] rounded-full bg-success-50 px-3 py-1 text-xs font-medium text-success-600 dark:bg-success-500/15 dark:text-success-500">
+          {/* <span className="absolute left-1/2 top-full -translate-x-1/2 -translate-y-[95%] rounded-full bg-success-50 px-3 py-1 text-xs font-medium text-success-600 dark:bg-success-500/15 dark:text-success-500">
             +10%
-          </span>
+          </span> */}
         </div>
         {/* <p className="mx-auto mt-10 w-full max-w-[380px] text-center text-sm text-gray-500 sm:text-base">
           You earn $3287 today, it's higher than last month. Keep up your good
