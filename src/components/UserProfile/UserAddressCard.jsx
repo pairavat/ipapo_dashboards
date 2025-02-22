@@ -4,13 +4,54 @@ import Button from "../ui/button/Button";
 import Input from "../form/input/InputField";
 import Label from "../form/Label";
 
-export default function UserAddressCard() {
+export default function UserAddressCard({ ids }) {
   const { isOpen, openModal, closeModal } = useModal();
   const handleSave = () => {
     // Handle save logic here
     console.log("Saving changes...");
     closeModal();
   };
+
+  const addressData = [
+    {
+      id: 0,
+      country: "Unknown",
+      cityState: "Unknown",
+      postalCode: "000000",
+      taxId: "N/A",
+    },
+    {
+      id: 1,
+      country: "Unknown",
+      cityState: "Unknown",
+      postalCode: "000000",
+      taxId: "N/A",
+    },
+    {
+      id: 2,
+      country: "Unknown",
+      cityState: "Unknown",
+      postalCode: "000000",
+      taxId: "N/A",
+    },
+    {
+      id: 3,
+      country: "Unknown",
+      cityState: "Unknown",
+      postalCode: "000000",
+      taxId: "N/A",
+    },
+    {
+      id: 4,
+      country: "Unknown",
+      cityState: "Unknown",
+      postalCode: "000000",
+      taxId: "N/A",
+    },
+  ];
+  
+ 
+  const idss = Number(ids);
   return (
     <>
       <div className="p-5 border border-gray-200 rounded-2xl dark:border-gray-800 lg:p-6">
@@ -26,7 +67,7 @@ export default function UserAddressCard() {
                   Country
                 </p>
                 <p className="text-sm font-medium text-gray-800 dark:text-white/90">
-                  United States
+                {addressData[idss]?.country} 
                 </p>
               </div>
 
@@ -35,7 +76,7 @@ export default function UserAddressCard() {
                   City/State
                 </p>
                 <p className="text-sm font-medium text-gray-800 dark:text-white/90">
-                  Phoenix, Arizona, United States
+                {addressData[idss]?.cityState} 
                 </p>
               </div>
 
@@ -44,7 +85,7 @@ export default function UserAddressCard() {
                   Postal Code
                 </p>
                 <p className="text-sm font-medium text-gray-800 dark:text-white/90">
-                  ERT 2489
+                {addressData[idss]?.postalCode} 
                 </p>
               </div>
 
@@ -53,7 +94,7 @@ export default function UserAddressCard() {
                   TAX ID
                 </p>
                 <p className="text-sm font-medium text-gray-800 dark:text-white/90">
-                  AS4568384
+                {addressData[idss]?.taxId} 
                 </p>
               </div>
             </div>

@@ -5,13 +5,60 @@ import Button from "../ui/button/Button";
 import Input from "../form/input/InputField";
 import Label from "../form/Label";
 
-export default function UserInfoCard() {
+export default function UserInfoCard({ ids }) {
   const { isOpen, openModal, closeModal } = useModal();
   const handleSave = () => {
     // Handle save logic here
     console.log("Saving changes...");
     closeModal();
   };
+
+  const idss = Number(ids);
+  const personalInfo = [
+    {
+      id: 0,
+      firstName: "Lindsey",
+      lastName: "Curtis",
+      email: "abcd@gmail.com",
+      phone: "34567892",
+      bio: "Web Designer",
+    },
+    {
+      id: 1,
+      firstName: "Kaiya",
+      lastName: "George",
+      email: "abcd@gmail.com",
+      phone: "34567892",
+      bio: "Project Manager",
+    },
+    {
+      id: 2,
+      firstName: "Zain",
+      lastName: "Geidt",
+      email: "abcd@gmail.com",
+      phone: "34567892",
+      bio: "Content Writer",
+    },
+    {
+      id: 3,
+      firstName: "Abram",
+      lastName: "Schleifer",
+      email: "abcd@gmail.com",
+      phone: "34567892",
+      bio: "Digital Marketer",
+    },
+    {
+      id: 4,
+      firstName: "Carla",
+      lastName: "George",
+      email: "abcd@gmail.com",
+      phone: "34567892",
+      bio: "Front-end Developer",
+    },
+  ];
+  
+  
+
   return (
     <div className="p-5 border border-gray-200 rounded-2xl dark:border-gray-800 lg:p-6">
       <div className="flex flex-col gap-6 lg:flex-row lg:items-start lg:justify-between">
@@ -26,7 +73,7 @@ export default function UserInfoCard() {
                 First Name
               </p>
               <p className="text-sm font-medium text-gray-800 dark:text-white/90">
-                Musharof
+              {personalInfo[idss]?.firstName} 
               </p>
             </div>
 
@@ -35,7 +82,7 @@ export default function UserInfoCard() {
                 Last Name
               </p>
               <p className="text-sm font-medium text-gray-800 dark:text-white/90">
-                Chowdhury
+              {personalInfo[idss]?.lastName}
               </p>
             </div>
 
@@ -44,7 +91,7 @@ export default function UserInfoCard() {
                 Email address
               </p>
               <p className="text-sm font-medium text-gray-800 dark:text-white/90">
-                randomuser@pimjo.com
+              {personalInfo[idss]?.email} 
               </p>
             </div>
 
@@ -53,7 +100,7 @@ export default function UserInfoCard() {
                 Phone
               </p>
               <p className="text-sm font-medium text-gray-800 dark:text-white/90">
-                +09 363 398 46
+              {personalInfo[idss]?.phone} 
               </p>
             </div>
 
@@ -62,7 +109,7 @@ export default function UserInfoCard() {
                 Bio
               </p>
               <p className="text-sm font-medium text-gray-800 dark:text-white/90">
-                Team Manager
+              {personalInfo[idss]?.bio}
               </p>
             </div>
           </div>
