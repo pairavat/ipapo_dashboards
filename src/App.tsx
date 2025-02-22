@@ -16,7 +16,7 @@ import Buttons from "./pages/UiElements/Buttons";
 import Images from "./pages/UiElements/Images";
 import Videos from "./pages/UiElements/Videos";
 import UserProfiles from "./pages/UserProfiles";
-
+import People_Dashboard from "./pages/Dashboard/People_Dashboard/People_Dashboard";
 export default function App() {
   return (
     <>
@@ -25,6 +25,8 @@ export default function App() {
           {/* Dashboard Layout */}
           <Route element={<AppLayout />}>
             <Route index path="/" element={<Ecommerce />} />
+            <Route index path="/people-dashbord" element={<People_Dashboard />} />
+
             {/* Others Page */}
             <Route path="/profile" element={<UserProfiles />} />
             <Route path="/calendar" element={<Calendar />} />
