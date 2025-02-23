@@ -18,6 +18,7 @@ import Videos from "./pages/UiElements/Videos";
 // import UserProfiles from "./pages/UserProfiles";
 import UserListPage from "./pages/User/UserListPage";
 import UserListProfiles from "./pages/UserProfile/User_List_Profiles";
+import SalesOverview from "./pages/SalesOverview/SalesOverview";
 // import UserDetails from "./pages/"
 
 export default function App() {
@@ -50,6 +51,12 @@ export default function App() {
             <Route path="/buttons" element={<Buttons />} />
             <Route path="/images" element={<Images />} />
             <Route path="/videos" element={<Videos />} />
+ {/* Operations routes */}
+ <Route path="/sales_overview" element={<SalesOverview />} />
+
+
+
+
           </Route>
 
           {/* Auth Layout */}
@@ -60,6 +67,12 @@ export default function App() {
 
           {/* Fallback Route */}
           <Route path="*" element={<NotFound />} />
+
+
+
+            {/* Operations routes */}
+            <Route path="/sales_overview" element={<SalesOverview />} />
+
         </Routes>
       </Router>
     </>
