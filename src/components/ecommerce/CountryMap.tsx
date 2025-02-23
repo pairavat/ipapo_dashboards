@@ -63,7 +63,7 @@ const CountryMap: React.FC<CountryMapProps> = ({ mapColor }) => {
         },
       ]}
       zoomOnScroll={false}
-      zoomMax={12}
+      zoomMax={10}
       zoomMin={1}
       zoomAnimate={true}
       zoomStep={1.5}
