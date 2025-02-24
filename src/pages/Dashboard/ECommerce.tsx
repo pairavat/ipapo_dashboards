@@ -19,7 +19,7 @@ export default function Ecommerce() {
           <EcommerceMetrics />
         </div>
 
-        <div className="col-span-4">
+        <div className="col-span-12 xl:col-span-4">
           <SalesPieChart />
         </div>
 
