@@ -36,7 +36,7 @@ const navItems: NavItem[] = [
     icon: <TableIcon />,
     subItems: [
       { name: "Dashbord", path: "/people-dashbord", pro: false },
-      { name: "Employee Directory", path: "/employee_directory", pro: false },
+      { name: "Employee Directory", path: "/user-list", pro: false },
       { name: "Attendance & Leave Manager", path: "/attendance_&_leave_manager", pro: false },
       { name: "Performance Report", path: "/performance_report", pro: false },
       { name: "Payroll", path: "/payroll", pro: false }
