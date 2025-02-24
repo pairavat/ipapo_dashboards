@@ -21,6 +21,8 @@ import InventoryList from  './components/RecentOrders/InventoryList'
 import AssetMaintenance from "./pages/AssestMaintenance/AssestMaintenance";
 import Inventory_Dashboard from "./pages/Dashboard/Inventory_Dashboard/Inventory_Dashboard"
 import Operations_Dashboard from "./pages/Dashboard/Operations_Dashboard/Operations_Dashboard"
+import ProjectManagement from "./pages/ProjectManagement/ProjectManagement";
+import IncidentManagement from "./pages/IncidenceManagement/IncidenceManagement";
 export default function App() {
   return (
     <>
@@ -57,6 +59,10 @@ export default function App() {
                 {/* inventory list */}
            <Route  path="/inventory_list" element={<InventoryList />} />
            <Route  path="/assest_maintenance" element={<AssetMaintenance />} />
+
+
+           <Route path="/project_management" element={<ProjectManagement />} />
+ <Route path="/incidence_management" element= {<IncidentManagement />} />
 
           </Route>
 
