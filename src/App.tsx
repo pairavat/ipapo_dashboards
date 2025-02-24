@@ -19,6 +19,13 @@ import UserListPage from "./pages/User/UserListPage";
 import UserListProfiles from "./pages/UserProfile/User_List_Profiles";
 import SalesOverview from "./pages/SalesOverview/SalesOverview";
 import UserProfiles from "./pages/UserProfiles";
+import People_Dashboard from "./pages/Dashboard/People_Dashboard/People_Dashboard";
+import InventoryList from  './components/RecentOrders/InventoryList'
+import AssetMaintenance from "./pages/AssestMaintenance/AssestMaintenance";
+import Inventory_Dashboard from "./pages/Dashboard/Inventory_Dashboard/Inventory_Dashboard"
+import Operations_Dashboard from "./pages/Dashboard/Operations_Dashboard/Operations_Dashboard"
+import ProjectManagement from "./pages/ProjectManagement/ProjectManagement";
+import IncidentManagement from "./pages/IncidenceManagement/IncidenceManagement";
 import BarChart from "./pages/Charts/BarChart";
 import LineChart from "./pages/Charts/LineChart";
 
@@ -30,6 +37,12 @@ export default function App() {
           {/* Dashboard Layout */}
           <Route element={<AppLayout />}>
             <Route index path="/" element={<Ecommerce />} />
+            <Route index path="/people-dashbord" element={<People_Dashboard />} />
+            <Route index path="/Inventory-dashbord" element={<Inventory_Dashboard />} />
+            <Route index path="/Operations-dashbord" element={<Operations_Dashboard />} />
+
+
+
             {/* Others Page */}
             <Route path="/profile/:id" element={<UserListProfiles />} />
             <Route path="/calendar" element={<Calendar />} />
@@ -55,6 +68,13 @@ export default function App() {
 
             {/* Operations routes */}
             <Route path="/sales_overview" element={<SalesOverview />} />
+                {/* inventory list */}
+           <Route  path="/inventory_list" element={<InventoryList />} />
+           <Route  path="/assest_maintenance" element={<AssetMaintenance />} />
+
+
+           <Route path="/project_management" element={<ProjectManagement />} />
+            <Route path="/incidence_management" element= {<IncidentManagement />} />
 
             {/* Charts */}
             <Route path="/line-chart" element={<LineChart />} />
@@ -65,6 +85,11 @@ export default function App() {
 
           {/* Fallback Route */}
           <Route path="*" element={<NotFound />} />
+
+
+       
+
+
         </Routes>
       </Router>
     </>
