@@ -25,7 +25,7 @@ const IndiaMap = () => {
   ];
 
   return (
-    <div style={{ width: "350px", height: "350px" }}>
+    <div  className="col-span-2 w-full flex items-center justify-center">
       <MapContainer
         center={[22.3511, 78.6677]} // Center of India
         zoom={4}
