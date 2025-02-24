@@ -17,6 +17,7 @@ import Images from "./pages/UiElements/Images";
 import Videos from "./pages/UiElements/Videos";
 import UserListPage from "./pages/User/UserListPage";
 import UserListProfiles from "./pages/UserProfile/User_List_Profiles";
+import SalesOverview from "./pages/SalesOverview/SalesOverview";
 import UserProfiles from "./pages/UserProfiles";
 import People_Dashboard from "./pages/Dashboard/People_Dashboard/People_Dashboard";
 import InventoryList from  './components/RecentOrders/InventoryList'
@@ -65,21 +66,19 @@ export default function App() {
             <Route path="/images" element={<Images />} />
             <Route path="/videos" element={<Videos />} />
 
+            {/* Operations routes */}
+            <Route path="/sales_overview" element={<SalesOverview />} />
                 {/* inventory list */}
            <Route  path="/inventory_list" element={<InventoryList />} />
            <Route  path="/assest_maintenance" element={<AssetMaintenance />} />
 
 
            <Route path="/project_management" element={<ProjectManagement />} />
- <Route path="/incidence_management" element= {<IncidentManagement />} />
+            <Route path="/incidence_management" element= {<IncidentManagement />} />
 
             {/* Charts */}
             <Route path="/line-chart" element={<LineChart />} />
             <Route path="/bar-chart" element={<BarChart />} />
-          </Route>
-
-          {/* Auth Layout */}
-          <Route element={<AuthLayout />}>
             <Route path="/signin" element={<SignIn />} />
             <Route path="/signup" element={<SignUp />} />
           </Route>
