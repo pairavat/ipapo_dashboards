@@ -8,9 +8,6 @@ import {
 } from "../ui/table";
 
 import Badge from "../ui/badge/Badge";
-import { href } from "react-router";
-import { profile } from "console";
-import { userInfo } from "os";
 
 interface Order {
   id: number;
