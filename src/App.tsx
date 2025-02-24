@@ -15,6 +15,8 @@ import Badges from "./pages/UiElements/Badges";
 import Buttons from "./pages/UiElements/Buttons";
 import Images from "./pages/UiElements/Images";
 import Videos from "./pages/UiElements/Videos";
+import UserListPage from "./pages/User/UserListPage";
+import UserListProfiles from "./pages/UserProfile/User_List_Profiles";
 import UserProfiles from "./pages/UserProfiles";
 import People_Dashboard from "./pages/Dashboard/People_Dashboard/People_Dashboard";
 import InventoryList from  './components/RecentOrders/InventoryList'
@@ -23,6 +25,9 @@ import Inventory_Dashboard from "./pages/Dashboard/Inventory_Dashboard/Inventory
 import Operations_Dashboard from "./pages/Dashboard/Operations_Dashboard/Operations_Dashboard"
 import ProjectManagement from "./pages/ProjectManagement/ProjectManagement";
 import IncidentManagement from "./pages/IncidenceManagement/IncidenceManagement";
+import BarChart from "./pages/Charts/BarChart";
+import LineChart from "./pages/Charts/LineChart";
+
 export default function App() {
   return (
     <>
@@ -38,7 +43,7 @@ export default function App() {
 
 
             {/* Others Page */}
-            <Route path="/profile" element={<UserProfiles />} />
+            <Route path="/profile/:id" element={<UserListProfiles />} />
             <Route path="/calendar" element={<Calendar />} />
             <Route path="/blank" element={<Blank />} />
 
@@ -47,6 +52,10 @@ export default function App() {
 
             {/* Tables */}
             <Route path="/basic-tables" element={<BasicTables />} />
+
+            {/* Users */}
+            <Route path="/user-list" element={<UserListPage />} />
+            {/* <Route path="/user-details" element={<UserDetails />} /> */}
 
             {/* Ui Elements */}
             <Route path="/alerts" element={<Alerts />} />
@@ -64,6 +73,9 @@ export default function App() {
            <Route path="/project_management" element={<ProjectManagement />} />
  <Route path="/incidence_management" element= {<IncidentManagement />} />
 
+            {/* Charts */}
+            <Route path="/line-chart" element={<LineChart />} />
+            <Route path="/bar-chart" element={<BarChart />} />
           </Route>
 
           {/* Auth Layout */}

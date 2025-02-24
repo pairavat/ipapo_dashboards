@@ -5,32 +5,79 @@ import Button from "../ui/button/Button";
 import Input from "../form/input/InputField";
 import Label from "../form/Label";
 
-export default function UserMetaCard() {
+
+
+
+
+export default function UserMetaCard({ ids }) {
   const { isOpen, openModal, closeModal } = useModal();
   const handleSave = () => {
     // Handle save logic here
     console.log("Saving changes...");
     closeModal();
   };
+
+  const userData = [
+    {
+      id: 0,
+      name: "Lindsey Curtis",
+      post: "Web Designer",
+      address: "Phoenix, Arizona, United States",
+      user_img: "/images/user/owner.jpg",
+    },
+    {
+      id: 1,
+      name: "Kaiya George",
+      post: "Project Manager",
+      address: "Nagpur Maharashtra",
+      user_img: "/images/user/user-01.jpg",
+    },
+    {
+      id: 2,
+      name: "Zain Geidt",
+      post: "Content Writer",
+      address: "MUMBAI Maharashtra",
+      user_img: "/images/user/user-01.jpg",
+    },
+    {
+      id: 3,
+      name: "Abram Schleifer",
+      post: "Digital Marketer",
+      address: "Pune Maharashtra",
+      user_img: "/images/user/user-06.jpg",
+    },
+    {
+      id: 4,
+      name: "Carla George",
+      post: "Front-end Developer",
+      address: "Nashik Maharashtra",
+      user_img: "/images/user/user-03.jpg",
+    },
+  ];
+
+  const idss = Number(ids);
+
+  console.log("in user meta card", userData[idss], idss);
+
   return (
     <>
       <div className="p-5 border border-gray-200 rounded-2xl dark:border-gray-800 lg:p-6">
         <div className="flex flex-col gap-5 xl:flex-row xl:items-center xl:justify-between">
           <div className="flex flex-col items-center w-full gap-6 xl:flex-row">
             <div className="w-20 h-20 overflow-hidden border border-gray-200 rounded-full dark:border-gray-800">
-              <img src="/images/user/owner.jpg" alt="user" />
+              <img src=  {userData[idss]?.user_img}  alt="user" />
             </div>
             <div className="order-3 xl:order-2">
               <h4 className="mb-2 text-lg font-semibold text-center text-gray-800 dark:text-white/90 xl:text-left">
-                Musharof Chowdhury
-              </h4>
+                {userData[idss]?.name} 
+              </h4> 
               <div className="flex flex-col items-center gap-1 text-center xl:flex-row xl:gap-3 xl:text-left">
                 <p className="text-sm text-gray-500 dark:text-gray-400">
-                  Team Manager
+                {userData[idss]?.post}
                 </p>
                 <div className="hidden h-3.5 w-px bg-gray-300 dark:bg-gray-700 xl:block"></div>
                 <p className="text-sm text-gray-500 dark:text-gray-400">
-                  Arizona, United States
+                {userData[idss]?.address}
                 </p>
               </div>
             </div>

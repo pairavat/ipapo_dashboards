@@ -51,6 +51,16 @@ const CountryMap: React.FC<CountryMapProps> = ({ mapColor }) => {
             strokeOpacity: 0,
           },
         },
+        {
+          latLng: [-14.4095261, -51.31668],
+          name: "Brazil",
+          style: {
+            fill: "#465FFF",
+            borderWidth: 1,
+            borderColor: "white",
+            strokeOpacity: 0,
+          },
+        },
       ]}
       zoomOnScroll={false}
       zoomMax={10}
